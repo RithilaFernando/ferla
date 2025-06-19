@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferlah Apparel Tech</title>
+    <link rel="stylesheet" href="../styles/header.css"> <!-- Base header styles -->
+        <link rel="stylesheet" href="../styles/utilitybar.css">
+    <link rel="stylesheet" href="../styles/header-homepage-animation.css"> <!-- HOMEPAGE ONLY: Header animation -->
+    <link rel="stylesheet" href="../styles/homepage.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/animations.css"> <!-- General page animations -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="top-utility-bar">
+        <div class="top-utility-bar-content">
+            <a href="../index.html" class="language-switch-link" lang="en" title="Switch to Sinhala">Eng</a>
+        </div>
+    </div>
+    <header class="header-transparent"> <!-- Start with transparent for JS to manage -->
+        <nav class="navbar">
+            <a href="s-index.html" class="logo-link">
+                <div class="logo-container">
+                    <img src="../Images/home-page/logo.png" alt="Ferlah Logo" class="logo-image load-anim-pop-in">
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li class="load-anim-slide-down load-delay-1"><a href="s-index.html">මුල් පිටුව</a></li>
+                <li class="load-anim-slide-down load-delay-2"><a href="s-courses.html">පාඨමාලා</a></li>
+                <li class="load-anim-slide-down load-delay-3"><a href="s-gallery.html">ගැලරිය</a></li>
+                <li class="load-anim-slide-down load-delay-4"><a href="s-about.html">අපි ගැන</a></li>
+                <li class="load-anim-slide-down load-delay-5"><a href="s-contact.html">අපව අමතන්න</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger-button" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+           <section class="hero-section-wrapper" id="home">
+                <div class="hero-section">
+                </div>
+            </section>
+            
+            <section class="courses-promo-section" id="courses">
+                <div class="container">
+                    <div class="courses-promo-content">
+                        <div class="courses-promo-text">
+                            <h2 class="section-title animate-on-scroll anim-slide-from-left">අපගේ පාඨමාලා</h2>
+                            <p class="section-description animate-on-scroll anim-slide-from-left-subtle delay-1">
+සෑම ආකාරයක සිත් ඇදගන්නාසුළු විලාසිතාවන්ගේ රූප/ඉලස්ත්‍රේෂන් මවිත කරන ඇඟළුම් වෙළඳපොළට ගෙන්වීම සඳහා රූප මාරු කිරීම.
+රූපය අනුව මූලික සැලසුම් සකස් කිරීම සහ ආකෘති සෑදීම, කප්පම් සහ සූත්‍රණය කිරීමේ උපදෙස් සහිතව තත්ත්වය සහිත ඇඟළුම් නිෂ්පාදනය.
+
+                            </p>
+                            <a href="s-courses.html" class="btn btn-learn-more animate-on-scroll anim-bounce-in-bottom delay-2">
+                                අපගේ පාඨමාලා වෙත පිවිසෙන්න <span class="arrow">→</span>
+                            </a>
+                        </div>
+                        <div class="courses-promo-images">
+                            <div class="image-wrapper image-1 animate-on-scroll anim-rotate-fade-in delay-2">
+                                <img src="../Images/home-page/courses image.jpg"
+                                    alt="Young woman with red hair in fashion setting">
+                            </div>
+                            <div class="image-wrapper image-2 animate-on-scroll anim-rotate-fade-in delay-3">
+                                <img src="../Images/home-page/courses-image-2.jpg"
+                                    alt="Woman in yellow tracksuit outdoors">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="products-showcase-section">
+                <div class="container">
+                    <h2 class="section-title text-center animate-on-scroll anim-zoom-in">අපගේ ශිෂ්‍ය නිර්මාණ</h2>
+                </div>
+                <div class="product-slider-container animate-on-scroll anim-slide-up delay-1">
+                    <button class="slider-arrow prev-arrow" aria-label="Previous products">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <div class="product-slider-viewport">
+                        <div class="product-slider-track">
+                            <div class="product-slide-item animate-on-scroll anim-pop-in delay-1">
+                                <img src="../Images/home-page/student-creations/1.jpg" alt="Product 1">
+                            </div>
+                            <div class="product-slide-item animate-on-scroll anim-pop-in delay-2">
+                                <img src="../Images/home-page/student-creations/2.jpg" alt="Product 2">
+                            </div>
+                            <div class="product-slide-item animate-on-scroll anim-pop-in delay-3">
+                                <img src="../Images/home-page/student-creations/3.jpg" alt="Product 3">
+                            </div>
+                            <div class="product-slide-item animate-on-scroll anim-pop-in delay-4">
+                                <img src="../Images/home-page/student-creations/4.jpg" alt="Product 4">
+                            </div>
+                            <div class="product-slide-item animate-on-scroll anim-pop-in delay-5">
+                                <img src="../Images/home-page/student-creations/5.jpg" alt="Product 5">
+                            </div>
+                            <div class="product-slide-item animate-on-scroll anim-pop-in delay-6">
+                                <img src="../Images/home-page/student-creations/6.jpg" alt="Product 6">
+                            </div>
+                            <div class="product-slide-item animate-on-scroll anim-pop-in delay-7">
+                                <img src="../Images/home-page/student-creations/7.jpg" alt="Product 7">
+                            </div>
+                            <div class="product-slide-item animate-on-scroll anim-pop-in delay-8">
+                                <img src="../Images/home-page/student-creations/8.jpg" alt="Product 8">
+                            </div>
+                            <div class="product-slide-item animate-on-scroll anim-pop-in delay-8">
+                                <img src="../Images/home-page/student-creations/9.jpg" alt="Product 9">
+                            </div>
+                            <div class="product-slide-item animate-on-scroll anim-pop-in delay-8">
+                                <img src="../Images/home-page/student-creations/10.jpg" alt="Product 10">
+                            </div>
+                            <div class="product-slide-item animate-on-scroll anim-pop-in delay-8">
+                                <img src="../Images/home-page/student-creations/11.jpg" alt="Product 11">
+                            </div>
+                            <div class="product-slide-item animate-on-scroll anim-pop-in delay-8">
+                                <img src="../Images/home-page/student-creations/12.jpg" alt="Product 12">
+                            </div>
+                            <div class="product-slide-item animate-on-scroll anim-pop-in delay-8">
+                                <img src="../Images/home-page/student-creations/13.jpg" alt="Product 13">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-arrow next-arrow" aria-label="Next products">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </section>
+<section class="about-us-section" id="about">
+    <div class="container">
+        <div class="about-us-content">
+            <div class="about-us-text">
+                <h2 class="section-title animate-on-scroll anim-slide-from-right">Ferla Apparel Tech පිළිබඳව</h2>
+                <p class="section-description animate-on-scroll anim-slide-from-right-subtle delay-1">
+ඔබ ඉගෙන ගන්නා අතරතුර ශ්‍රී ලංකාවේ අති උසස් සහ පළපුරුදු ෆැෂන් ඇඳුම් පුහුණුකරු වන
+මහත්මා ජී.ටී.එච්. ප්‍රනාන්දු මහතාගේ මාර්ගෝපදේශනය යටතේ වේ. අවුරුදු 35කට වැඩි අධ්‍යාපන හා පුහුණු අත්දැකීම් සහිතව Ferla Apparel Tech හි ප්‍රධාන විධායක නිළධාරියා වන ඔහු, ඔබට අනාගතයේදී ඕනෑම අභියෝගයකට මුහුණ දිය හැකි තාක්ෂණික දැනුම ලබාදීමට කැප වී ඇත.
+                </p>
+                <p class="section-description animate-on-scroll anim-slide-from-right-subtle delay-2">
+ප්‍රනාන්දු මහතා ඔබේ කුසලතා වර්ධනය කිරීම සඳහා පුද්ගලිකව වගකීම් භාර ගනු ඇත. 
+3D මානව ශරීර හැඩතල සහ මිනුම් අනුව ඉහළ තත්වයේ සහ පාරිභෝගික ප්‍රියතාවයට යටත්ව නිෂ්පාදනය කරන ෆැෂන් ඇඳුම් නිර්මාණය කිරීමේදී අනාගත අභියෝගවලට මුහුණ දිය හැකි විදිහට ඔබව සූදානම් කරයි.
+                </p>
+                <a href="s-about.html" class="btn btn-learn-more animate-on-scroll anim-pop-in delay-3">
+                    තව දැනගන්න <span class="arrow">→</span>
+                </a>
+            </div>
+            <div class="about-us-images">
+                <div class="image-wrapper image-about-1 animate-on-scroll anim-slide-from-left delay-3">
+                    <img src="../Images/home-page/about-us-first.jpg" alt="ෆැෂන් නිරූපණය - උස">
+                </div>
+                <div class="image-wrapper image-about-2 animate-on-scroll anim-slide-from-left-subtle delay-4">
+                    <img src="../Images/home-page/about-us-second.jpg" alt="ෆැෂන් නිරූපණය - පුළුල්">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="why-us-section">
+    <div class="container">
+        <h2 class="section-title text-center animate-on-scroll anim-bounce-in-bottom">මැදිහත් විය යුතුය ඇයි Ferla Apparel Tech?</h2>
+        <div class="why-us-grid">
+            <div class="why-us-item animate-on-scroll anim-cascade-up delay-1">
+                <div class="why-us-icon-wrapper">
+                    <i class="fas fa-compass-drafting"></i>
+                </div>
+                <h3 class="why-us-title">මූලික දැනුම</h3>
+                <p class="why-us-description">
+                    මූලික කුසලතා මාස්ටර් කරමින් කඩිසින මිනිත්තුවකින් සෝලාම විය හැකියි!
+                </p>
+            </div>
+            <div class="why-us-item animate-on-scroll anim-cascade-up delay-2">
+                <div class="why-us-icon-wrapper">
+                    <i class="fas fa-scissors"></i>
+                </div>
+                <h3 class="why-us-title">තාක්ෂණය</h3>
+                <p class="why-us-description">
+                    ඔබේ ඇඳුම් නිර්මාණ කුසලතා වර්ධනය කරමින් නිර්මාණාත්මකත්වය ඉහළට ඔසවන විශේෂිත තාක්ෂණයන්හි බලය විමුක්ති කර ගන්න!
+                </p>
+            </div>
+            <div class="why-us-item animate-on-scroll anim-cascade-up delay-3">
+                <div class="why-us-icon-wrapper">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3 class="why-us-title">ප්‍රකාශනය</h3>
+                <p class="why-us-description">
+                    ඔබ සැමවිටම පලඳින්න කැමති වූ විශිෂ්ට ඇඳුම් නිර්මාණය කරමින් ඔබේ අද්විතීය පුද්ගලිකත්වය පෙන්වන්න!
+                </p>
+            </div>
+            <div class="why-us-item animate-on-scroll anim-cascade-up delay-4">
+                <div class="why-us-icon-wrapper">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h3 class="why-us-title">විශ්වාසය</h3>
+                <p class="why-us-description">
+                    අප හා එක් වීමෙන්ම ඔබේ නොසන්සුන්කමෙන් මිදෙන්න. විශ්වාසයෙන් යුතුව ආරම්භ කරන්න!
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item animate-on-scroll anim-quick-fade">
+                <div class="stat-number" data-target="100">0</div>
+                <span class="stat-plus">+</span>
+                <p class="stat-label">ආරම්භයෙන් පසු ශිෂ්‍යයින්</p>
+            </div>
+            <div class="stat-item animate-on-scroll anim-quick-fade delay-1">
+                <div class="stat-number" data-target="50">0</div>
+                <span class="stat-plus">+</span>
+                <p class="stat-label">අවුරුදු පළපුරුද්ද</p>
+            </div>
+            <div class="stat-item animate-on-scroll anim-quick-fade delay-2">
+                <div class="stat-number" data-target="250">0</div>
+                <span class="stat-plus">+</span>
+                <p class="stat-label">සම්පූර්ණ කළ ව්‍යාපෘති</p>
+            </div>
+            <div class="stat-item animate-on-scroll anim-quick-fade delay-3">
+                <div class="stat-number" data-target="98">0</div>
+                <span class="stat-plus">%</span>
+                <p class="stat-label">පාරිභෝගික සතුට</p>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-column animate-on-scroll anim-fade-in delay-1">
+                <h4 class="footer-title">අපි ගැන</h4>
+                <p class="footer-about-text">
+ෆර්නැන්ඩෝ මහතා 3D මානව හැඩතල අනුව උසස් තත්ත්වයෙන් සහ පාරිභෝගික ඉල්ලුම අනුව ඇඳුම් නිර්මාණය කිරීම සදහා ඔබව සූදානම් කිරීමට වග බදවෙයි.
+                    <a href="s-about.html" class="read-more-link">තව කියවන්න</a>
+                </p>
+                <div class="social-icons">
+                    <a href="https://web.facebook.com/ferlafashion" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/94713999800" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column animate-on-scroll anim-fade-in delay-2">
+                <h4 class="footer-title">අනුබද්ධ ලින්ක්</h4>
+                <ul class="footer-links">
+                    <li><a href="s-index.html">මුල් පිටුව</a></li>
+                    <li><a href="s-courses.html">පාඨමාලා</a></li>
+                    <li><a href="s-gallery.html">ගැලරිය</a></li>
+                    <li><a href="s-contact.html">අප අමතන්න</a></li>
+                    <li><a href="s-about.html">අප ගැන</a></li>
+                </ul>
+            </div>
+            <div class="footer-column animate-on-scroll anim-fade-in delay-3">
+                <h4 class="footer-title">අපව සම්බන්ධ කරන්න</h4>
+                <ul class="footer-contact-info">
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+94 77 222 9799</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+94 71 399 9800</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>139 හැවරලොක් පාර, කොළඹ 05</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>ferla.apperal@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr class="footer-divider animate-on-scroll anim-fade-in delay-4">
+        <div class="footer-bottom animate-on-scroll anim-fade-in delay-5">
+            <p>© <span id="current-year">2023</span> Ferla Apparel Tech. සියලු හිමිකම් ඇවිරිණි. නිර්මාණය කලේ <a href="https://www.vinzeres.com/" target="_blank" rel="noopener noreferrer">Viuzeres</a></p>
+        </div>
+    </div>
+</footer>
+
+<script src="../script/header.js"></script>
+<script src="../script/homepage.js"></script>
+<script src="../script/footer.js"></script>
+</body>
+</html>

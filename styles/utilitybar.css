@@ -1,0 +1,97 @@
+/* styles/header.css OR styles/utility-nav.css */
+
+/* ... (any existing basic resets * { ... } if at the top of header.css) ... */
+
+/* === TOP UTILITY BAR === */
+.top-utility-bar {
+    background-color: #ffffff; /* White background */
+    padding: 5px 0; /* Small vertical padding */
+    /* border-bottom: 1px solid #e0e0e0; /* Optional: very light border below it */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Optional: very subtle shadow */
+    position: fixed; /* Fix it to the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001; /* Higher than main header if main header is also fixed/sticky and has a z-index */
+    height: 30px; /* SMALL height */
+    box-sizing: border-box; /* Ensure padding is included in height */
+}
+
+.top-utility-bar-content {
+    max-width: 1200px; /* Or your site's main container width */
+    margin: 0 auto; /* Center content if you have a max-width */
+    padding: 0 20px; /* Horizontal padding consistent with your site */
+    display: flex;
+    justify-content: flex-end; /* Align content (the link) to the right */
+    align-items: center; /* Vertically center the link in the bar */
+    height: 100%;
+}
+
+.language-switch-link {
+    font-family: 'Roboto', Arial, sans-serif; /* Or your preferred font for this */
+    font-size: 0.85em; /* Small font size */
+    color: #333; /* Dark grey text */
+    text-decoration: none;
+    font-weight: 500; /* Slightly bold */
+    padding: 3px 8px; /* Small padding around the text */
+    border-radius: 4px; /* Slightly rounded corners for the link itself */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.language-switch-link:hover {
+    background-color: #f0f0f0; /* Light grey background on hover */
+    color: #000; /* Darker text on hover */
+}
+
+/* Adjustments for main header and page content due to the new fixed top bar */
+/* If your main header is also fixed or sticky */
+header {
+    /* Ensure it sits below the new top-utility-bar */
+    /* If utility bar is 30px high, and header has some padding itself,
+       top might need to be 30px plus any border/shadow of utility bar */
+    top: 30px !important; /* Force it below. Adjust '30px' to utility bar height + borders */
+}
+
+/* Your main content area (e.g., <main> tag) also needs to be pushed down further */
+/* In your existing page CSS files (homepage.css, courses-main.css, contact.css, etc.)
+   adjust the padding-top for your main content container like so: */
+/*
+   EXAMPLE - in homepage.css / courses-main.css / etc.:
+   main.homepage-main-content,
+   main.programs-page-main-content,
+   main.crash-course-page-main-content {
+       padding-top: calc(80px + 30px); /* Original padding-top + height of utility bar */
+                                   /* Or calculate specific values like 110px */
+/* }
+*/
+
+/* For pages with the special header-transparent-to-solid animation (like homepage) */
+/* The hero section needs to account for BOTH the utility bar AND the main header height */
+/*
+   EXAMPLE - in homepage.css (for .hero-section-wrapper):
+   .hero-section-wrapper {
+       padding-top: calc(90px + 30px); /* Original hero padding + utility bar height */
+                                      /* Or if it was padding-top:100px -> 130px */
+/* }
+*/
+/* Similarly, in header.js, the scroll threshold for the header becoming solid
+   might need to consider that the page effectively "starts" 30px lower.
+   This might not be an issue if scroll is relative to window.scrollY.
+*/
+
+
+/* Responsive adjustments for the utility bar if needed */
+@media (max-width: 768px) {
+    .top-utility-bar {
+        height: 28px; /* Can make it even smaller on mobile */
+        padding: 4px 0;
+    }
+    header {
+        top: 28px !important; /* Match new height */
+    }
+    .language-switch-link {
+        font-size: 0.8em;
+    }
+    /* Adjust main content padding-top in your specific page CSS files accordingly */
+    /* e.g., padding-top: calc(original_padding + 28px); */
+}

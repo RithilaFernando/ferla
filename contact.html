@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Ferlah Apparel Tech</title>
+    <link rel="stylesheet" href="styles/header.css"> <!-- Base header (solid) -->
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/contact.css">
+    <link rel="stylesheet" href="styles/animations.css"> <!-- General page animations -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header> <!-- Standard solid header -->
+        <nav class="navbar">
+            <a href="index.html" class="logo-link">
+                <div class="logo-container">
+                    <img src="Images/home-page/logo.png" alt="Ferlah Logo" class="logo-image load-anim-pop-in">
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li class="load-anim-slide-down load-delay-1"><a href="index.html">Home Page</a></li>
+                <li class="load-anim-slide-down load-delay-2"><a href="courses.html">Programs</a></li>
+                <li class="load-anim-slide-down load-delay-3"><a href="gallery.html">Gallery</a></li>
+                <li class="load-anim-slide-down load-delay-4"><a href="about.html">About us</a></li>
+                <li class="load-anim-slide-down load-delay-5"><a href="contact.html" class="active-nav-link">Contact us</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger-button" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="contact-hero-section"> <!-- Renamed for clarity and styling -->
+            <div class="contact-hero-content">
+                <h1 class="page-title animate-on-scroll anim-slide-down">Contact Us</h1>
+                <nav class="breadcrumbs animate-on-scroll anim-slide-up delay-1" aria-label="breadcrumb">
+                    <a href="index.html">Home</a> /
+                    <span>Contact Us</span>
+                </nav>
+            </div>
+        </section>
+
+        <div class="contact-content-wrapper">
+            <section class="contact-form-area animate-on-scroll anim-slide-from-left delay-1">
+                <h2 class="section-title form-title">Send Us a Message</h2>
+                <p class="required-note"><span class="asterisk">*</span> - Indicates required fields</p>
+
+                <form action="#" method="POST">
+                    <div class="form-row">
+                        <div class="form-group animate-on-scroll anim-fade-in delay-2">
+                            <label for="full-name">Full Name <span class="asterisk">*</span></label>
+                            <input type="text" id="full-name" name="full-name" required maxlength="1000">
+                            <small class="char-counter">1000 Characters Remaining</small>
+                        </div>
+                        <div class="form-group animate-on-scroll anim-fade-in delay-3">
+                            <label for="phone">Phone <span class="asterisk">*</span></label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width animate-on-scroll anim-fade-in delay-4">
+                        <label for="email">Email <span class="asterisk">*</span></label>
+                        <input type="email" id="email" name="email" required maxlength="1000">
+                         <small class="char-counter">1000 Characters Remaining</small>
+                    </div>
+
+                    <div class="form-group full-width animate-on-scroll anim-fade-in delay-6">
+                        <label for="reason-to-contact">Your Message / Reason to Contact <span class="asterisk">*</span></label>
+                        <textarea id="reason-to-contact" name="reason-to-contact" rows="5" required maxlength="2000"></textarea>
+                        <small class="char-counter">2000 Characters Remaining</small>
+                    </div>
+                    
+                    <button type="submit" class="submit-button animate-on-scroll anim-pop-in delay-7">Send Message</button>
+                </form>
+            </section>
+
+            <aside class="company-contact-info animate-on-scroll anim-slide-from-right delay-2">
+                <h2 class="section-title">Our Contact Details</h2>
+                
+                <div class="contact-item animate-on-scroll anim-fade-in delay-3">
+                    <i class="fas fa-map-marker-alt contact-icon"></i>
+                    <div class="contact-text">
+                        <strong>Address:</strong>
+                        <p>139 haverlock rd, colombo 05</p>
+                    </div>
+                </div>
+
+                <div class="contact-item animate-on-scroll anim-fade-in delay-4">
+                    <i class="fas fa-phone-alt contact-icon"></i>
+                    <div class="contact-text">
+                        <strong>Phone:</strong>
+                        <p><a href="tel:+941001001000">+94 71 399 9800</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item animate-on-scroll anim-fade-in delay-4">
+                    <i class="fas fa-phone-alt contact-icon"></i>
+                    <div class="contact-text">
+                        <strong>Phone:</strong>
+                        <p><a href="tel:+941001001000">+94 77 222 9799</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item animate-on-scroll anim-fade-in delay-5">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <div class="contact-text">
+                        <strong>Email:</strong>
+                        <p><a href="mailto:info@ferlaapparel.com">ferla.apperal@gmail.com</a></p>
+                    </div>
+                </div>
+                
+                <h3 class="sub-heading animate-on-scroll anim-fade-in delay-6">Connect With Us</h3>
+                <div class="social-icons-contact-page">
+                    <a href="https://web.facebook.com/ferlafashion" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook" class="animate-on-scroll anim-pop-in delay-7"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </aside>
+        </div>
+    </main>
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-column animate-on-scroll anim-fade-in delay-1">
+                <h4 class="footer-title">About Us</h4>
+                <p class="footer-about-text">
+Mr. Fernando will personally undertake the responsibility to develop your skills to face future challenges in creating Fashion construction according to the 3D physical shapes and Measurements of the human figure while maintaining high quality and Manufacturing according to the client's satisfaction
+                    <a href="about.html" class="read-more-link">read more</a>
+                </p>
+                <div class="social-icons">
+                    <a href="https://web.facebook.com/ferlafashion" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/94713999800" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column animate-on-scroll anim-fade-in delay-2">
+                <h4 class="footer-title">Affiliated Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home Page</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column animate-on-scroll anim-fade-in delay-3">
+                <h4 class="footer-title">Get in Touch</h4>
+                <ul class="footer-contact-info">
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+94 77 222 9799
+</span>
+                    </li>
+                                        <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+94 71 399 9800</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>139 haverlock rd, colombo 05</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>ferla.apperal@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr class="footer-divider animate-on-scroll anim-fade-in delay-4">
+        <div class="footer-bottom animate-on-scroll anim-fade-in delay-5">
+            <p>© <span id="current-year">2023</span> Ferla Appare Tech. All Rights Reserved. Designed by <a href="https://www.vinzeres.com/" target="_blank" rel="noopener noreferrer">Viuzeres</a></p>
+        </div>
+    </div>
+</footer>
+
+<script src="script/header.js"></script>
+<script src="script/homepage.js"></script> <!-- For scroll animations -->
+<script src="script/footer.js"></script>
+</body>
+</html>

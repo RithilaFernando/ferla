@@ -1,0 +1,481 @@
+.about-banner {
+    width: 100%; /* Full width */
+    position: relative; /* For potential future content overlay if needed, not strictly necessary for just text */
+ text-align: center;
+    /* --- Background Image --- */
+    /* IMPORTANT: Replace with your actual image path */
+    background-image: url('../Images/about-us/hero-image.png'); /* <<< SET YOUR IMAGE */
+    background-color: #9889C2; /* Fallback color (the purple from your example) */
+    background-size: cover;    /* Ensure image covers the section, may crop */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat;
+
+    /* --- Centering Text --- */
+    display: flex;
+    align-items: center;    /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+
+    /* --- Responsive Height via Aspect Ratio (1920x720) --- */
+    aspect-ratio: 1920 / 400;
+    /* This makes the section height scale with its width, maintaining image proportions. */
+
+    /* --- Minimum Height --- */
+    /* Prevents the banner from becoming too squished on very narrow screens */
+    min-height: 200px; /* Adjust as needed for phones */
+    /* max-height: 720px; /* Optional: if you never want it taller than original image height */
+}
+
+.about-banner-title {
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif; /* Your serif font */
+    color: #ffffff; /* Black text */
+    font-weight: 700; /* Bold */
+    text-align: center; /* Ensure text itself is centered if it wraps */
+    padding: 10px 20px; /* Add some padding around text, especially for small screens */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    /* --- Responsive Font Size --- */
+    /* clamp(MINIMUM_SIZE, PREFERRED_SCALING_SIZE, MAXIMUM_SIZE) */
+    font-size: clamp(2em, 7vw, 5.5em); /* Adjust these values to taste */
+    /*
+        2em: Smallest font size.
+        7vw: Scales with 7% of viewport width.
+        5.5em: Largest font size.
+    */
+    margin: 0; /* Remove default h1 margin */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) { /* Tablets */
+    .about-banner {
+        min-height: 180px; /* Slightly adjust min-height */
+    }
+    .about-banner-title {
+        font-size: clamp(1.8em, 8vw, 4.5em); /* Adjust responsive font range */
+    }
+}
+
+@media (max-width: 480px) { /* Phones */
+    .about-banner {
+        min-height: 150px; /* Further adjust min-height */
+    }
+    .about-banner-title {
+        font-size: clamp(1.5em, 9vw, 3.5em); /* Further adjust responsive font range */
+        padding: 10px 15px;
+    }
+}
+
+/* ... (your existing CSS, including .container, .animate-on-scroll, delay classes) ... */
+
+/* Mission Vision Section */
+.mission-vision-section {
+    padding: 80px 15px;
+    background-color: #e9e9e9; /* Light grey background */
+    overflow-x: hidden;
+}
+
+/* .mission-vision-section .container { (Assumed to be globally defined) } */
+
+.mission-vision-grid {
+    display: flex;
+    align-items: center; /* Vertically align text and image columns */
+    gap: 50px; /* Increased gap for larger text cards */
+    flex-wrap: wrap;
+    max-width: 1200px; /* Adjusted max-width to accommodate larger text cards */
+    margin: 0 auto;   /* Center the grid */
+}
+
+/* Text Column */
+.mission-vision-text-column {
+    /* --- ADJUSTED FOR "20% BIGGER" CARDS --- */
+    /* If previous "medium" flex-basis was 400px, 20% bigger is 400 * 1.2 = 480px */
+    flex: 1 1 480px;
+    max-width: 520px; /* Max width for this column */
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Increased space between mission and vision cards */
+}
+
+.content-card {
+    background-color: #fff;
+    padding: 35px 40px; /* Increased padding for larger cards */
+    border-radius: 10px; /* Slightly larger radius */
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.09);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.content-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.content-card-title {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    /* --- ADJUSTED FONT SIZE FOR LARGER CARDS --- */
+    font-size: clamp(1.5em, 2.5vw, 2em);
+    color: #1D2D44;
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+.content-card-description {
+    font-family: 'Roboto', Arial, sans-serif;
+    /* --- ADJUSTED FONT SIZE FOR LARGER CARDS --- */
+    font-size: clamp(0.9em, 1.8vw, 1.05em);
+    line-height: 1.75;
+    color: #555;
+    margin-bottom: 0;
+}
+
+/* Image Column */
+.mission-vision-image-column {
+    flex: 1 1 450px; /* Keep this around this size, or adjust if it looks too small next to big text cards */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 520px; /* Adjusted for image cluster */
+}
+
+.image-overlap-wrapper {
+    position: relative;
+    width: clamp(300px, 85%, 480px); /* Max width for the image stack */
+    /* The image card aspect ratios will largely dictate height here */
+}
+
+.image-card {
+    border-radius: 10px; /* Match content-card */
+    overflow: hidden;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.09);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    background-color: #fff;
+    aspect-ratio: 10 / 11; /* Example: For visually squarish images that are slightly taller */
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.image-card:hover {
+    transform: scale(1.05) translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.13);
+    z-index: 5;
+}
+
+/* Positioning for overlapping images */
+.image-mv-1 { /* Back image */
+    width: 90%; /* Relative to image-overlap-wrapper */
+    transform: rotate(-7deg) translateX(-10%); /* Adjusted for desired overlap look */
+    position: relative; /* Stays in flow to define wrapper height */
+    z-index: 1;
+}
+
+.image-mv-2 { /* Front image */
+    width: 85%; /* Relative to image-overlap-wrapper */
+    position: absolute;
+    /* These percentages are relative to .image-overlap-wrapper's dimensions */
+    bottom: -15%; /* More overlap from bottom */
+    right: -15%;  /* More overlap from right */
+    transform: rotate(8deg); /* More pronounced rotation */
+    z-index: 2;
+}
+.image-mv-2:hover {
+    transform: scale(1.08) rotate(5deg) translateY(-10px); /* Enhanced hover */
+    z-index: 6;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) { /* Larger Tablets / Small Laptops */
+    .mission-vision-grid {
+        max-width: 95%;
+        gap: 35px;
+    }
+    .mission-vision-text-column {
+        flex-basis: 450px; /* Ensure it has enough space */
+    }
+    .mission-vision-image-column {
+        flex-basis: 400px; /* Balance */
+    }
+}
+
+@media (max-width: 860px) { /* Tablet: Stack main columns */
+    .mission-vision-grid {
+        max-width: 100%; /* Take full width when stacked */
+        gap: 0; /* Reset gap, use margin on items instead */
+    }
+    .mission-vision-text-column,
+    .mission-vision-image-column {
+        flex-basis: 100%;
+        max-width: 600px; /* Max width for text content when stacked */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .mission-vision-text-column {
+        margin-bottom: 40px; /* Space between stacked text and image sections */
+    }
+    .mission-vision-image-column {
+        min-height: auto; /* Let content define height */
+    }
+    .image-overlap-wrapper {
+         width: clamp(280px, 70%, 450px); /* Control image stack width when centered */
+    }
+}
+
+@media (max-width: 576px) { /* Phones */
+    .mission-vision-section {
+        padding: 60px 15px;
+    }
+    .mission-vision-text-column {
+        gap: 30px; /* Space between mission and vision cards */
+        margin-bottom: 50px; /* Increased space before images */
+    }
+    .content-card {
+        padding: 25px 30px;
+    }
+    .content-card-title {
+        font-size: clamp(1.4em, 5vw, 1.7em);
+    }
+    .content-card-description {
+        font-size: clamp(0.9em, 4vw, 1em);
+    }
+
+    /* --- Mobile Image Stacking (One under the other) --- */
+    .image-overlap-wrapper {
+        /* No longer need absolute positioning tricks for overlap on mobile */
+        width: 100%; /* Wrapper takes full width of its column */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center images in the column */
+        gap: 25px; /* Space between stacked images */
+    }
+    .image-mv-1,
+    .image-mv-2 {
+        position: relative; /* Back to normal flow */
+        width: clamp(260px, 85%, 350px); /* Control width of individual images when stacked */
+        transform: none; /* Reset desktop transforms */
+        bottom: auto;
+        right: auto;
+        /* aspect-ratio is already set on .image-card */
+    }
+    /* No need for separate z-index or different hover for stacked images unless desired */
+}
+
+/* Experience Hero Section */
+.experience-hero-section {
+    width: 100%;
+    position: relative; /* Anchor for absolutely positioned children */
+    overflow: hidden;   /* Prevent dude image from causing scroll if it slightly overflows */
+    background-color: #f0f0f0; /* Fallback background for the section */
+}
+
+.experience-content-wrapper {
+    width: 100%;
+    position: relative; /* Anchor for the dude image */
+
+    /* --- Abstract Background Image --- */
+    /* IMPORTANT: Replace with your actual 1920x1000 abstract background image */
+    background-image: url('../Images/about-us/my-experience-image.png'); /* <<< SET YOUR IMAGE */
+    background-color: #e0e0e0; /* Fallback if image fails to load */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    /* --- Responsive Height via Aspect Ratio (1920x1000) --- */
+    aspect-ratio: 1920 / 1000;
+
+    min-height: 400px; /* Minimum height for very narrow screens */
+    /* max-height: 1000px; /* Optional: Cap height at original image height */
+
+    /* For positioning the text block using padding on this wrapper */
+    display: flex;
+    padding: clamp(30px, 6vw, 80px) clamp(30px, 8vw, 120px); /* Responsive padding: TOP/BOTTOM LEFT/RIGHT */
+}
+
+.experience-text-block {
+    position: relative;
+    z-index: 2; /* Text block above abstract background, below dude potentially */
+    max-width: 600px; /* Max width for the text content */
+    /* The padding on .experience-content-wrapper provides its top-left positioning */
+}
+
+.experience-title {
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+    color: #000000; /* Black text */
+    font-weight: 700; /* Bold */
+    font-size: clamp(2.2em, 5vw, 4.5em); /* Responsive font size */
+    margin-top: 0;
+    margin-bottom: clamp(20px, 3vh, 35px); /* Responsive margin */
+    line-height: 1.2;
+}
+
+.experience-description {
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #333; /* Dark grey for readability */
+    font-size: clamp(0.9em, 1.8vw, 1.1em);
+    line-height: 1.7;
+    margin-bottom: clamp(15px, 2.5vh, 25px);
+}
+.experience-description:last-of-type {
+    margin-bottom: clamp(25px, 4vh, 40px); /* Space before social icons */
+}
+
+.experience-social-links {
+    display: flex;
+    gap: 15px; /* Space between icons */
+}
+
+.experience-social-links .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;  /* Size of the square */
+    height: 40px;
+    color: #fff;  /* Icon color */
+    font-size: 20px; /* Icon size within the square */
+    text-decoration: none;
+    border-radius: 4px; /* Slightly rounded corners */
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+.experience-social-links .social-icon:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.experience-social-links .facebook-icon {
+    background-color: #1877F2; /* Facebook Blue */
+}
+
+.experience-social-links .whatsapp-icon {
+    background-color: #25D366; /* WhatsApp Green */
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .experience-content-wrapper {
+        padding: clamp(30px, 5vw, 60px) clamp(30px, 6vw, 80px);
+    }
+    /* Dude image positioning might need slight tweaks as viewport shrinks,
+       but percentage-based should adapt reasonably well.
+       If not, uncomment and adjust: */
+    /*
+    .experience-dude-image {
+        left: 72%;
+        width: 27%;
+    }
+    */
+}
+
+@media (max-width: 992px) { /* Tablet */
+    .experience-text-block {
+        max-width: 500px; /* Give text more relative width */
+    }
+    .experience-title {
+        font-size: clamp(2em, 6vw, 3.8em);
+    }
+    .experience-dude-image {
+        width: 30%; /* Make dude slightly larger percentage of smaller container */
+        left: auto; /* Reset left positioning */
+        right: 4%;  /* Position from right edge */
+        top: 18%;   /* Adjust top position */
+        max-width: 420px; /* Cap pixel width on tablets */
+    }
+}
+
+@media (max-width: 768px) { /* Mobile - Preparing for your specific mobile layout */
+    .experience-content-wrapper {
+        display: block; /* Change from flex to block for stacking */
+        padding: 40px 20px;
+        aspect-ratio: auto; /* Let content define height */
+        min-height: auto;   /* Reset min-height or set a new one suitable for mobile content */
+    }
+    .experience-text-block {
+        max-width: 100%; /* Text takes full width */
+        margin-bottom: 40px; /* Space below text before dude image (in mobile layout) */
+    }
+    .experience-title {
+        font-size: clamp(1.8em, 7vw, 3em);
+    }
+    .experience-description {
+        font-size: clamp(0.85em, 2.5vw, 1em);
+    }
+
+    .experience-dude-image {
+        position: relative; /* Change from absolute for mobile stacking */
+        display: block;
+        width: 80%; /* Example width for when stacked below text */
+        max-width: 320px; /* Cap width on mobile */
+        margin: 0 auto;   /* Center the image */
+        left: auto;
+        top: auto;
+        right: auto;
+        height: auto;     /* Maintain aspect ratio */
+        z-index: 1;       /* Reset z-index for normal flow */
+        /* Hover effect is inherited, but can be adjusted */
+    }
+    .experience-dude-image:hover {
+        transform: scale(1.03); /* Slightly less pop on mobile */
+        /* box-shadow: 0 5px 15px rgba(0,0,0,0.12); */ /* Optional specific mobile shadow */
+    }
+}
+
+
+
+
+
+
+/* ... existing about.css styles ... */
+
+/* If you use the "Dude" image concept */
+.experience-hero-section {
+    /* Ensure it's a positioning context if "dude" image is absolute */
+     position: relative;
+}
+.experience-dude-image-container {
+    position: absolute; /* Example: absolutely position the container */
+    bottom: 0;
+    right: 5%; /* Example positioning */
+    width: 30%; /* Example width */
+    max-width: 380px; /* Max pixel width */
+    z-index: 1; /* May need to be above text if it overlaps, or below background elements */
+    /* Add overflow:hidden here or on .experience-content-wrapper to prevent dude image scroll if needed */
+}
+
+.experience-dude-actual-image {
+    display: block;
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    /* Optional styling for the image itself, like shadows or borders */
+}
+
+
+/* Responsive Adjustments for "Dude" image within about.css */
+@media (max-width: 992px) {
+    .experience-dude-image-container {
+        width: 35%;
+        right: 2%;
+        /* max-width: 300px; */
+    }
+}
+
+@media (max-width: 768px) {
+    /* How should the "dude" image behave on mobile for the about page experience section?
+       Current HTML places it after the text block.
+       The global 'experience-dude-image' styling might apply from homepage.css
+       If you want a specific mobile layout for *this* page's dude image, add it here.
+       For example, to make it a static block:
+    */
+    .experience-dude-image-container {
+        position: relative; /* Not absolute anymore */
+        width: 70%;
+        max-width: 300px;
+        margin: 40px auto 0 auto; /* Space above, centered */
+        bottom: auto;
+        right: auto;
+        z-index: auto;
+    }
+}
+
+/* ... rest of existing about.css styles ... */

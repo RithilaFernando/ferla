@@ -1,0 +1,200 @@
+/* styles/gallery.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* A very light grey, common neutral */
+    margin: 0;
+    /* Remove padding-top from body directly.
+       The <main> tag or the first section after header should handle this. */
+}
+
+main {
+    padding-top: 80px; /* Adjust this value to the actual height of your fixed header */
+                       /* This ensures content in <main> starts below the header */
+}
+
+/* --- Gallery Hero Section Styling --- */
+.gallery-hero-section {
+    width: 100%;
+    padding: 60px 20px 70px; /* Generous padding */
+    text-align: center;
+    position: relative; /* Keep for ::before pseudo-element if used */
+    overflow: hidden; /* Keep for any overflow control */
+    background-color: #1D2D44; /* Dark blue theme color FOR THIS SECTION */
+    color: #ffffff; /* White text on dark background FOR THIS SECTION */
+
+            background-image: url('../Images/banner-nromal.png'); /* <<< SET YOUR IMAGE */
+    background-color: #9889C2; /* Fallback color (the purple from your example) */
+    background-size: cover;    /* Ensure image covers the section, may crop */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat;
+
+    /* --- Centering Text --- */
+    display: flex;
+    align-items: center;    /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+
+    /* --- Responsive Height via Aspect Ratio (1920x720) --- */
+    aspect-ratio: 1920 / 312;
+    /* This makes the section height scale with its width, maintaining image proportions. */
+
+    /* --- Minimum Height --- */
+    /* Prevents the banner from becoming too squished on very narrow screens */
+    min-height: 200px; /* Adjust as needed for phones */
+    /* max-height: 720px; /* Optional: if you never want it taller than original image height */
+}
+
+.gallery-hero-section::before { /* Optional: subtle overlay for depth */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1); /* Slight dark overlay on top of the section's blue bg */
+    z-index: 1;
+}
+
+.gallery-hero-content {
+    position: relative; /* To sit above ::before overlay */
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5em, 6vw, 4.5em);
+    color: #FFFFFF; /* White text */
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.gallery-subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(1em, 2.5vw, 1.2em);
+    color: #e0e0e0; /* Light grey text for subtitle */
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    line-height: 1.7;
+}
+
+/* Active Nav Link Style (from header.css, but specificity can be reinforced if needed) */
+/*
+header .nav-links a.active-nav-link {
+    color: #f3732f !important;
+    font-weight: bold;
+}
+header .nav-links a.active-nav-link::after {
+    width: 100%;
+    background-color: #f3732f !important;
+}
+*/
+/* It's better to manage active link colors consistently within header.css if possible,
+   but the classes in gallery.html nav link ARE correct for applying these styles */
+
+
+/* --- Gallery Container & Grid Styling --- */
+/* ... (rest of gallery-container, gallery-grid, gallery-item styles remain the same as previous good version) ... */
+.gallery-container {
+    max-width: 1300px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* Specific column counts for breakpoints */
+@media (min-width: 1200px) { .gallery-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 992px) and (max-width: 1199px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 768px) and (max-width: 991px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+@media (min-width: 576px) and (max-width: 767px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; } }
+@media (max-width: 575px) { .gallery-grid { grid-template-columns: 1fr; gap: 20px; } }
+
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background-color: #e0e0e0;
+    cursor: pointer;
+    aspect-ratio: 4/3; /* Force all items to this aspect ratio. The image will 'cover' this. */
+
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.15);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 20px 20px;
+    background: linear-gradient(to top, rgba(29, 45, 68, 0.9) 20%, rgba(29, 45, 68, 0) 100%);
+    color: #fff;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: left;
+}
+
+.gallery-item:hover .image-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.image-overlay p {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 1.4;
+    text-shadow: none;
+}
+
+
+/* Responsive Adjustments for Gallery Page */
+@media (max-width: 768px) {
+    main { padding-top: 70px; /* Adjust for potentially smaller fixed header on mobile */ }
+    .gallery-hero-section {
+        padding: 50px 15px 60px;
+    }
+    .page-title { font-size: clamp(2em, 7vw, 3.5em); }
+    .gallery-subtitle { font-size: clamp(0.9em, 3vw, 1.1em); }
+    .gallery-container { margin-top: 40px; padding: 0 15px;}
+    .image-overlay p { font-size: 0.9em; }
+}
+
+@media (max-width: 480px) {
+    .page-title { font-size: clamp(1.8em, 8vw, 2.8em); }
+    .image-overlay { padding: 20px 15px 15px; }
+    .gallery-item { aspect-ratio: 3/2.5; }
+}

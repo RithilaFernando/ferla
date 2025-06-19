@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>අපව සම්බන්ධ කරගන්න - Ferlah Apparel Tech</title>
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/contact.css">
+    <link rel="stylesheet" href="../styles/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="s-index.html" class="logo-link">
+            <div class="logo-container">
+                <img src="../Images/home-page/logo.png" alt="Ferlah Logo" class="logo-image load-anim-pop-in">
+            </div>
+        </a>
+        <ul class="nav-links">
+                <li class="load-anim-slide-down load-delay-1"><a href="s-index.html">මුල් පිටුව</a></li>
+                <li class="load-anim-slide-down load-delay-2"><a href="s-courses.html">පාඨමාලා</a></li>
+                <li class="load-anim-slide-down load-delay-3"><a href="s-gallery.html">ගැලරිය</a></li>
+                <li class="load-anim-slide-down load-delay-4"><a href="s-about.html">අපි ගැන</a></li>
+                <li class="load-anim-slide-down load-delay-5"><a href="s-contact.html">අපව අමතන්න</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger-button" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+    </nav>
+</header>
+
+<main>
+    <section class="contact-hero-section">
+        <div class="contact-hero-content">
+            <h1 class="page-title animate-on-scroll anim-slide-down"><br>අපව සම්බන්ධ කරගන්න</h1>
+            <nav class="breadcrumbs animate-on-scroll anim-slide-up delay-1" aria-label="breadcrumb">
+                <a href="s-index.html">මුල් පිටුව</a> /
+                <span>අපව සම්බන්ධ කරගන්න</span>
+            </nav>
+        </div>
+    </section>
+
+    <div class="contact-content-wrapper">
+        <section class="contact-form-area animate-on-scroll anim-slide-from-left delay-1">
+            <h2 class="section-title form-title">පණිවිඩයක් යවන්න</h2>
+            <p class="required-note"><span class="asterisk">*</span> - අවශ්‍ය ක්ෂේත්‍ර</p>
+
+            <form action="#" method="POST">
+                <div class="form-row">
+                    <div class="form-group animate-on-scroll anim-fade-in delay-2">
+                        <label for="full-name">පූර්ණ නම <span class="asterisk">*</span></label>
+                        <input type="text" id="full-name" name="full-name" required maxlength="1000">
+                        <small class="char-counter">ඉතිරි අකුරු 1000</small>
+                    </div>
+                    <div class="form-group animate-on-scroll anim-fade-in delay-3">
+                        <label for="phone">දුරකථන <span class="asterisk">*</span></label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+
+                <div class="form-group full-width animate-on-scroll anim-fade-in delay-4">
+                    <label for="email">ඊමේල් <span class="asterisk">*</span></label>
+                    <input type="email" id="email" name="email" required maxlength="1000">
+                    <small class="char-counter">ඉතිරි අකුරු 1000</small>
+                </div>
+
+
+
+                <div class="form-group full-width animate-on-scroll anim-fade-in delay-6">
+                    <label for="reason-to-contact">ඔබේ පණිවිඩය / සම්බන්ධ වීමට හේතුව <span class="asterisk">*</span></label>
+                    <textarea id="reason-to-contact" name="reason-to-contact" rows="5" required maxlength="2000"></textarea>
+                    <small class="char-counter">ඉතිරි අකුරු 2000</small>
+                </div>
+
+                <button type="submit" class="submit-button animate-on-scroll anim-pop-in delay-7">පණිවිඩය යවන්න</button>
+            </form>
+        </section>
+
+        <aside class="company-contact-info animate-on-scroll anim-slide-from-right delay-2">
+            <h2 class="section-title">අපගේ සම්බන්ධීකරණ විස්තර</h2>
+
+            <div class="contact-item animate-on-scroll anim-fade-in delay-3">
+                <i class="fas fa-map-marker-alt contact-icon"></i>
+                <div class="contact-text">
+                    <strong>ලිපිනය:</strong>
+                    <p>139 හවර්ලොක් මාවත, කොළඹ 05</p>
+                </div>
+            </div>
+
+            <div class="contact-item animate-on-scroll anim-fade-in delay-4">
+                <i class="fas fa-phone-alt contact-icon"></i>
+                <div class="contact-text">
+                    <strong>දුරකථන:</strong>
+                    <p><a href="tel:+94713999800">+94 71 399 9800</a></p>
+                </div>
+            </div>
+
+            <div class="contact-item animate-on-scroll anim-fade-in delay-4">
+                <i class="fas fa-phone-alt contact-icon"></i>
+                <div class="contact-text">
+                    <strong>දුරකථන:</strong>
+                    <p><a href="tel:+94772229799">+94 77 222 9799</a></p>
+                </div>
+            </div>
+
+            <div class="contact-item animate-on-scroll anim-fade-in delay-5">
+                <i class="fas fa-envelope contact-icon"></i>
+                <div class="contact-text">
+                    <strong>ඊමේල්:</strong>
+                    <p><a href="mailto:ferla.apperal@gmail.com">ferla.apperal@gmail.com</a></p>
+                </div>
+            </div>
+
+            <h3 class="sub-heading animate-on-scroll anim-fade-in delay-6">අප සමඟ සම්බන්ධ වන්න</h3>
+            <div class="social-icons-contact-page">
+                <a href="https://web.facebook.com/ferlafashion" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook" class="animate-on-scroll anim-pop-in delay-7"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-column animate-on-scroll anim-fade-in delay-1">
+                <h4 class="footer-title">අපි ගැන</h4>
+                <p class="footer-about-text">
+ෆර්නැන්ඩෝ මහතා 3D මානව හැඩතල අනුව උසස් තත්ත්වයෙන් සහ පාරිභෝගික ඉල්ලුම අනුව ඇඳුම් නිර්මාණය කිරීම සදහා ඔබව සූදානම් කිරීමට වග බදවෙයි.
+                    <a href="s-about.html" class="read-more-link">තව කියවන්න</a>
+                </p>
+                <div class="social-icons">
+                    <a href="https://web.facebook.com/ferlafashion" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/94713999800" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column animate-on-scroll anim-fade-in delay-2">
+                <h4 class="footer-title">අනුබද්ධ ලින්ක්</h4>
+                <ul class="footer-links">
+                    <li><a href="s-index.html">මුල් පිටුව</a></li>
+                    <li><a href="s-courses.html">පාඨමාලා</a></li>
+                    <li><a href="s-gallery.html">ගැලරිය</a></li>
+                    <li><a href="s-contact.html">අප අමතන්න</a></li>
+                    <li><a href="s-about.html">අප ගැන</a></li>
+                </ul>
+            </div>
+            <div class="footer-column animate-on-scroll anim-fade-in delay-3">
+                <h4 class="footer-title">අපව සම්බන්ධ කරන්න</h4>
+                <ul class="footer-contact-info">
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+94 77 222 9799</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+94 71 399 9800</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>139 හැවරලොක් පාර, කොළඹ 05</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>ferla.apperal@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr class="footer-divider animate-on-scroll anim-fade-in delay-4">
+        <div class="footer-bottom animate-on-scroll anim-fade-in delay-5">
+            <p>© <span id="current-year">2023</span> Ferla Apparel Tech. සියලු හිමිකම් ඇවිරිණි. නිර්මාණය කලේ <a href="https://www.vinzeres.com/" target="_blank" rel="noopener noreferrer">Viuzeres</a></p>
+        </div>
+    </div>
+</footer>
+
+<script src="../script/header.js"></script>
+<script src="../script/homepage.js"></script>
+<script src="../script/footer.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+/* styles/header-homepage-animation.css */
+/* Contains styles ONLY for the transparent-to-solid header animation on pages with a hero image */
+
+header {
+    /* Base transition for the animated properties */
+    transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out, border-bottom-color 0.4s ease-in-out;
+    /* Initial border style, will be overridden */
+    border-bottom: 1px solid transparent;
+}
+
+/* State when header should be transparent (typically on page load over hero) */
+header.header-transparent {
+    background-color: transparent !important; /* Force transparent */
+    box-shadow: none !important; /* No shadow when transparent */
+    border-bottom-color: rgba(255, 255, 255, 0.5) !important; /* White/light line over dark hero */
+}
+
+/* Elements that need to change color on transparent header (if any, besides nav links) */
+header.header-transparent .tagline {
+    color: #f0f0f0 !important; /* Lighter tagline for visibility on dark hero */
+}
+
+header.header-transparent .hamburger .bar {
+    background-color: #fff !important; /* White hamburger bars for visibility on dark hero */
+}
+
+/* Optional: If logo image needs filter on transparent for better visibility */
+/* header.header-transparent .logo-link .logo-image {
+    filter: brightness(0) invert(1); // Example: Makes logo white
+} */
+
+
+/* State when header becomes solid (after scroll) */
+/* These styles primarily override the .header-transparent ones or ensure solid state */
+header.header-solid {
+    background-color: #fff; /* Your standard solid header background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Your standard header shadow */
+    border-bottom-color: transparent; /* No distinct border line needed when solid */
+}
+
+/* Elements returning to default color on solid header */
+header.header-solid .tagline {
+    color: #555; /* Your default tagline color */
+}
+
+header.header-solid .hamburger .bar {
+    background-color: #333; /* Your default hamburger bar color */
+}
+
+/* Reset logo filter if it was applied for transparent state */
+/* header.header-solid .logo-link .logo-image {
+    filter: none;
+} */
+
+/* Hamburger X color consistency with mobile menu background */
+/* This part of logic could stay in header.css if mobile menu appearance is always the same,
+   but specific active X state on transparent background might need handling here too if it differs.
+   Assuming for now mobile menu always has a light background, so X should be dark.
+*/
+header.header-transparent .hamburger.active .bar {
+    /* If mobile menu is open on transparent header, what color is the X?
+       If menu is light, X should be dark like #333 */
+    background-color: #333 !important;
+}

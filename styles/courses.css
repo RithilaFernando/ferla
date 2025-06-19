@@ -1,0 +1,288 @@
+/* styles/courses.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Light neutral background for the page */
+    margin: 0;
+}
+
+main.courses-page-content { /* Target the main specifically */
+    padding-top: 80px; /* Adjust this value to the actual height of your fixed header */
+}
+
+
+.section-subtitle {
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
+    font-size: clamp(1.8em, 4vw, 2.6em);  /* Responsive font size */
+    color: #1D2D44; /* Your primary dark blue */
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 10px; /* Space between subtitle and its description */
+    line-height: 1.3;
+    /* text-transform: capitalize; */ /* Optional, if you want "Ladies Wear" instead of "Ladies wear" if original is lowercase */
+}
+
+.red{color: red;}
+
+/* --- Page Hero Section Styling --- */
+.page-hero-section {
+    width: 100%;
+    padding: 60px 20px 70px;
+    text-align: center;
+    background-color: #1D2D44; /* Dark blue theme color */
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+
+            background-image: url('../Images/banner-nromal.png'); /* <<< SET YOUR IMAGE */
+    background-color: #9889C2; /* Fallback color (the purple from your example) */
+    background-size: cover;    /* Ensure image covers the section, may crop */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat;
+
+    /* --- Centering Text --- */
+    display: flex;
+    align-items: center;    /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+
+    /* --- Responsive Height via Aspect Ratio (1920x720) --- */
+    aspect-ratio: 1920 / 312;
+    /* This makes the section height scale with its width, maintaining image proportions. */
+
+    /* --- Minimum Height --- */
+    /* Prevents the banner from becoming too squished on very narrow screens */
+    min-height: 200px; /* Adjust as needed for phones */
+    /* max-height: 720px; /* Optional: if you never want it taller than original image height */
+}
+.page-hero-section::before { /* Optional: subtle overlay */
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+.page-hero-content { /* Wrapper for text content within hero */
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.main-page-title { /* "Our Courses" heading */
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5em, 6vw, 4.5em);
+    color: #FFFFFF;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.page-subtitle { /* Added subtitle for hero section */
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(1em, 2.5vw, 1.2em);
+    color: #e0e0e0;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+
+/* --- Course Grid Section --- */
+.course-grid-section {
+    padding: 50px 20px 80px;
+    background-color: #f8f9fa; /* Light background for contrast with cards */
+}
+
+.container { /* Ensure your global .container is defined or add: */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Responsive columns */
+    gap: 35px; /* Increased gap */
+}
+
+.course-card {
+    background-color: #fff;
+    border: 1px solid #e0e5ea; /* Softer border */
+    border-radius: 12px;     /* Modern rounded corners */
+    overflow: hidden; /* To ensure child elements conform to border-radius */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 6px 18px rgba(29, 45, 68, 0.08); /* Subtle themed shadow */
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.course-card:hover {
+    transform: translateY(-10px); /* More lift on hover */
+    box-shadow: 0 12px 28px rgba(29, 45, 68, 0.12);
+}
+
+/* Image container for the top part of the card */
+.course-card-image-container {
+    width: 100%;
+    /* Define an aspect ratio for the banner area.
+       Common banner ratios are 16:9, or something wider like 21:9 or 3:1.
+       Adjust based on your image dimensions and desired look.
+       Let's try a wider banner feel.
+    */
+    aspect-ratio: 2.5 / 1; /* Example: Width is 2.5 times the height. Adjust this! */
+    /* If you prefer a fixed height instead of aspect ratio, you can use: */
+    /* height: 200px; */
+    overflow: hidden; /* Clip image within this container */
+    position: relative; /* For potential overlays or effects on the image later */
+}
+
+.course-banner-image { /* New class for the single banner image */
+    width: 100%;
+    height: 100%; /* Make image fill the container's aspect ratio */
+    object-fit: cover; /* Ensures the image covers the area, might crop */
+    transition: transform 0.4s ease-out;
+}
+
+.course-card:hover .course-banner-image {
+    transform: scale(1.08); /* Zoom banner image on card hover */
+}
+
+/* Styles for .course-image-half are no longer needed with a single banner */
+/* REMOVE or COMMENT OUT:
+.course-image-half {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease-out;
+}
+.course-card:hover .course-image-half {
+    transform: scale(1.08);
+}
+*/
+
+
+.course-card-content {
+    padding: 25px 30px 30px; /* Generous padding */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows content to fill card height */
+}
+
+.course-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5em, 2.5vw, 1.9em);
+    color: #1D2D44; /* Dark Blue title */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.course-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.85em;
+    color: #555e68;
+    margin-bottom: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+.course-meta span {
+    display: inline-flex;
+    align-items: center;
+}
+.course-meta i {
+    margin-right: 6px;
+    color: #777; /* Subtle icon color */
+}
+
+
+.course-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.9em, 1.7vw, 0.95em);
+    line-height: 1.65;
+    color: #4a5562; /* Softer dark grey */
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.course-price {
+    background-color: #eaf0f6; /* Light blue-grey, theme consistent */
+    color: #1D2D44; /* Dark blue text */
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: clamp(0.95em, 2.2vw, 1.15em);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600; /* Bold price */
+    text-align: center;
+    margin-bottom: 25px;
+    align-self: flex-start;
+    border: 1px solid #d0d8e0; /* Subtle border */
+}
+
+.btn.btn-enroll {
+    background-color: #1D2D44; /* Dark Blue primary button */
+    color: #fff;
+    padding: 13px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    font-size: clamp(0.95em, 2vw, 1em);
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: stretch;
+    margin-top: auto;
+    border: none;
+    cursor: pointer;
+}
+
+.btn.btn-enroll:hover {
+    background-color: #334a6c; /* Darker blue hover state */
+    transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) { /* Tablets */
+    .course-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    .course-card-content {
+        padding: 20px 25px 25px;
+    }
+     .course-card-image-container {
+        aspect-ratio: 2 / 1; /* Slightly taller banner on tablets if desired */
+    }
+}
+
+@media (max-width: 767px) { /* Between tablet and phone - can go to 1 column or adjust minmax */
+     .course-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+     .course-card-image-container {
+        aspect-ratio: 1.8 / 1; /* Adjust aspect ratio for better fit */
+    }
+}
+
+
+@media (max-width: 600px) { /* Phones */
+    main.courses-page-content { padding-top: 70px; }
+    .page-hero-section { padding: 50px 15px 60px; }
+    .main-page-title { font-size: clamp(2em, 7vw, 3.5em); }
+    .page-subtitle { font-size: clamp(0.9em, 3vw, 1.1em); }
+
+    .course-grid-section { padding: 40px 15px 60px; }
+    .course-grid { grid-template-columns: 1fr; gap: 30px; }
+
+    .course-title { font-size: clamp(1.4em, 4.5vw, 1.8em); }
+    .course-description { font-size: clamp(0.85em, 2.8vw, 0.9em); }
+    .course-card-image-container {
+        aspect-ratio: 16/9; /* Standard 16:9 might be good for single column on mobile */
+    }
+}

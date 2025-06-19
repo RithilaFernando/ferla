@@ -1,0 +1,132 @@
+/* styles/animations.css */
+
+/* Base for elements to be animated */
+.animate-on-scroll {
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-duration: 0.8s;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.animate-on-scroll.is-visible { opacity: 1; transform: none; }
+
+/* --- NEW & ENHANCED ANIMATION TYPES --- */
+.anim-pop-in { transform: scale(0.7); }
+.anim-fade-in { /* Opacity handled by .animate-on-scroll */ }
+.anim-slide-up { transform: translateY(70px); }
+.anim-slide-up-subtle { transform: translateY(30px); }
+.anim-slide-down { transform: translateY(-70px); }
+.anim-slide-down-subtle { transform: translateY(-30px); }
+.anim-slide-from-right { transform: translateX(150px); }
+.anim-slide-from-right-subtle { transform: translateX(50px); }
+.anim-slide-from-left { transform: translateX(-150px); }
+.anim-slide-from-left-subtle { transform: translateX(-50px); }
+.anim-zoom-in { transform: scale(0.5); }
+.anim-cascade-up { transform: translateY(80px); opacity: 0; } /* Opacity also handled for this specific anim */
+.anim-bounce-in-bottom { opacity: 0; }
+.anim-bounce-in-bottom.is-visible { animation: bounceInBottom 1s forwards cubic-bezier(0.34, 1.56, 0.64, 1); }
+@keyframes bounceInBottom { /* ... keyframes as before ... */
+    0% { opacity: 0; transform: translateY(100px) scale(0.7); }
+    60% { opacity: 1; transform: translateY(-20px) scale(1.1); }
+    80% { transform: translateY(5px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.anim-rotate-fade-in { transform: rotate(-15deg) scale(0.8); opacity: 0; } /* Opacity also handled */
+
+/* Staggered Delays */
+.animate-on-scroll.delay-1.is-visible { transition-delay: 0.1s; }
+/* ... all other delays .delay-2 to .delay-8 ... */
+.animate-on-scroll.delay-8.is-visible { transition-delay: 0.8s; }
+
+/* --- REMOVED HEADER SPECIFIC ANIMATION RULES FROM HERE --- */
+/* header {...}
+   header.header-transparent {...}
+   header.header-solid {...} */
+
+/* Hero Items - Load Animations */
+.load-anim-hero-text { opacity: 0; animation: heroTextEntry 1s forwards cubic-bezier(0.23, 1, 0.32, 1); }
+@keyframes heroTextEntry { /* ... keyframes as before ... */
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+.load-anim-hero-item { opacity: 0; transform: scale(0.5) rotate(-10deg); animation: heroItemPop 1.2s forwards cubic-bezier(0.34, 1.56, 0.64, 1); }
+@keyframes heroItemPop { /* ... keyframes as before ... */
+    0% { opacity: 0; transform: scale(0.5) rotate(-10deg); }
+    70% { opacity: 1; transform: scale(1.1) rotate(5deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+/* Common load animations */
+.load-anim-fade-in { opacity: 0; animation: genericFadeIn 0.8s ease-out forwards; }
+/* ... other load-anim-... rules and keyframes ... */
+@keyframes genericFadeIn { to { opacity: 1; } }
+@keyframes genericSlideUp { to { opacity: 1; transform: translateY(0); } }
+@keyframes genericPopIn { to { opacity: 1; transform: scale(1); } }
+
+
+/* Delays for Load Animations */
+.load-delay-1 { animation-delay: 0.1s !important; }
+/* ... all other load-delays ... */
+.load-delay-8 { animation-delay: 0.8s !important; }
+
+
+.anim-quick-fade { opacity: 0; }
+.anim-quick-fade.is-visible { opacity: 1; transition-property: opacity; transition-duration: 0.4s; transition-timing-function: ease-in; }
+
+
+/* styles/animations.css */
+
+/* ... (all existing animation styles up to Hero Items load animations) ... */
+
+/* Hero Items - Load Animations (More pronounced) */
+/* KEEP load-anim-hero-item as is for the beanie, shirt, turtleneck */
+.load-anim-hero-item {
+    opacity: 0;
+    transform: scale(0.5) rotate(-10deg);
+    animation: heroItemPop 1.2s forwards cubic-bezier(0.34, 1.56, 0.64, 1); /* Bouncy pop */
+}
+@keyframes heroItemPop {
+    0% { opacity: 0; transform: scale(0.5) rotate(-10deg); }
+    70% { opacity: 1; transform: scale(1.1) rotate(5deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+
+/* --- NEW Hero Text Load Animations (Slide from Left/Right) --- */
+.load-anim-slide-from-left-hero {
+    opacity: 0;
+    transform: translateX(-100px); /* Start off-screen to the left */
+    animation: heroSlideFromLeft 1s forwards cubic-bezier(0.23, 1, 0.32, 1); /* Smooth ease-out */
+}
+@keyframes heroSlideFromLeft {
+    0% { opacity: 0; transform: translateX(-100px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+.load-anim-slide-from-right-hero {
+    opacity: 0;
+    transform: translateX(100px); /* Start off-screen to the right */
+    animation: heroSlideFromRight 1s forwards cubic-bezier(0.23, 1, 0.32, 1); /* Smooth ease-out */
+}
+@keyframes heroSlideFromRight {
+    0% { opacity: 0; transform: translateX(100px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* REMOVE or COMMENT OUT old .load-anim-hero-text if no longer needed, or keep for other uses */
+/*
+.load-anim-hero-text {
+    opacity: 0;
+    animation: heroTextEntry 1s forwards cubic-bezier(0.23, 1, 0.32, 1);
+}
+@keyframes heroTextEntry {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+*/
+
+
+/* Common load animations (can still be used elsewhere) */
+.load-anim-fade-in { opacity: 0; animation: genericFadeIn 0.8s ease-out forwards; }
+/* ... rest of load-anim-... and generic keyframes ... */
+/* ... and Delays for Load Animations .load-delay-1 to .load-delay-8 ... */
+/* ... and .anim-quick-fade ... */

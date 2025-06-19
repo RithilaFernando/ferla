@@ -1,0 +1,163 @@
+/* styles/courses-main.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    margin: 0;
+}
+
+main.programs-page-main-content {
+    padding-top: 80px; /* Adjust for your fixed header height */
+}
+
+/* === PROGRAMS HERO BANNER STYLING (Ochre/Gold Theme - from previous correct version) === */
+.programs-hero-banner {
+    width: 100%;
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+    background-image: url('../Images/banner-nromal.png'); /* YOUR OCHRE HERO IMAGE */
+    background-color: #aa8245;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    aspect-ratio: 1920 / 400; /* Adjust to your image (wide banner) */
+    min-height: 250px;
+    max-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.programs-hero-banner-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
+.programs-hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.8em, 7vw, 5.5em); color: #FFFFFF; font-weight: 700; margin: 0 0 15px 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+.programs-hero-subtitle { font-family: 'Roboto', sans-serif; font-size: clamp(0.9em, 2.2vw, 1.15em); color: #f0f0f0; max-width: 650px; margin: 0 auto; line-height: 1.7; opacity: 0.9; }
+
+
+/* === PROGRAM TILES SECTION (NEW SIMPLIFIED DESIGN) === */
+.program-tiles-section {
+    padding: 60px 20px;
+    background-color: #ffffff; /* Clean background for this section */
+}
+
+.container {
+    max-width: 1200px;
+    margin-left: 300px;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Optional section title above tiles */
+/* .section-title-elegant { ... } */
+
+.program-tiles-grid {
+    display: grid;
+    /* To fit 4 across: min around 250-270px. Let's try 260px for a good balance. */
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px; /* Gap between tiles */
+}
+
+.program-tile { /* This is the <a> tag */
+    display: block;
+    position: relative; /* For absolute positioning of overlay */
+    border-radius: 8px; /* Softer corners */
+    overflow: hidden; /* To clip image and overlay */
+    text-decoration: none;
+    box-shadow: 0 5px 18px rgba(29, 45, 68, 0.08); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Aspect ratio drives the tile's proportions. 3/4 is a nice portrait card. */
+    /* If your images are more landscape, consider 4/3 or 16/9. */
+    aspect-ratio: 3 / 4; /* Slightly portrait */
+}
+
+.program-tile:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(29, 45, 68, 0.12);
+}
+
+.program-tile-image { /* The <img> tag */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the tile area, crops if necessary */
+    display: block;
+    transition: transform 0.4s ease-out;
+}
+
+.program-tile:hover .program-tile-image {
+    transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+.program-tile-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 20px 20px; /* Generous padding for the label */
+    box-sizing: border-box;
+    text-align: center; /* Center the title */
+    /* Semi-transparent dark gradient from bottom up */
+    background: linear-gradient(to top, rgba(15, 23, 36, 0.9) 0%, rgba(15, 23, 36, 0.7) 50%, transparent 100%);
+    transition: background 0.3s ease; /* Smooth transition for overlay if changed on hover */
+}
+.program-tile:hover .program-tile-overlay {
+     background: linear-gradient(to top, rgba(15, 23, 36, 0.95) 0%, rgba(15, 23, 36, 0.8) 50%, transparent 100%);
+}
+
+.program-tile-title { /* The <h3> label text */
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.2em, 3vw, 1.7em); /* Responsive, adjust as needed */
+    color: #ffffff; /* White text for legibility on dark overlay */
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4); /* Enhance legibility */
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+/* Hero Banner Responsive */
+@media (max-width: 992px) {.container{margin-left: auto;} }
+@media (max-width: 768px) { .container{margin-left: auto;} }
+@media (max-width: 600px) { .container{margin-left: auto;} }
+
+/* Program Tiles Responsive */
+@media (max-width: 1024px) { /* Larger tablets or smaller desktops */
+    .program-tiles-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Slightly smaller min */
+        gap: 20px;
+    }
+    .program-tile { aspect-ratio: 3 / 3.8; } /* Adjust aspect ratio if they become too tall */
+    .container{margin-left: auto;}
+}
+
+@media (max-width: 768px) { /* Tablets - Aim for 2 columns */
+    .program-tiles-section { padding: 50px 15px; }
+    .program-tiles-grid {
+        grid-template-columns: repeat(2, 1fr); /* Force 2 columns */
+        gap: 20px;
+    }
+    .program-tile { aspect-ratio: 3 / 3.5; } /* Good for 2-column portrait tiles */
+    .program-tile-title { font-size: clamp(1.1em, 2.8vw, 1.5em); }
+    .program-tile-overlay { padding: 15px; }
+    .container{margin-left: auto;}}
+
+@media (max-width: 480px) { /* Phones - Stack to 1 column */
+    .program-tiles-section { padding: 40px 15px; }
+    .program-tiles-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .program-tile {
+        max-width: 350px; /* Cap width for single column */
+        margin-left: auto;
+        margin-right: auto;
+        aspect-ratio: 3 / 3.8; /* Or adjust for taller look on mobile */
+    }
+    .program-tile-title { font-size: clamp(1.2em, 4.5vw, 1.6em); }
+    .container{margin-left: auto;}
+}

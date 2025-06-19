@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Ferlah Apparel Tech</title>
+    <link rel="stylesheet" href="styles/header.css"> <!-- Base header (solid by default) -->
+    <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/animations.css"> <!-- General page animations -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header> <!-- Will be solid as header-homepage-animation.css is not linked -->
+        <nav class="navbar">
+            <a href="index.html" class="logo-link">
+                <div class="logo-container">
+                    <img src="Images/home-page/logo.png" alt="Ferlah Logo" class="logo-image load-anim-pop-in"> <!-- Pop in on load -->
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li class="load-anim-slide-down load-delay-1"><a href="index.html">Home Page</a></li>
+                <li class="load-anim-slide-down load-delay-2"><a href="courses.html">Programs</a></li>
+                <li class="load-anim-slide-down load-delay-3"><a href="gallery.html">Gallery</a></li>
+                <li class="load-anim-slide-down load-delay-4"><a href="about.html">About us</a></li>
+                <li class="load-anim-slide-down load-delay-5"><a href="contact.html">Contact us</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger-button" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-banner">
+            <!-- Banner title will "pop" or "zoom" in -->
+            <h1 class="about-banner-title animate-on-scroll anim-zoom-in">About us</h1>
+        </section>
+
+        <section class="mission-vision-section">
+            <div class="container">
+                <div class="mission-vision-grid">
+                    <div class="mission-vision-text-column">
+                        <div class="content-card animate-on-scroll anim-slide-from-left">
+                            <h2 class="content-card-title">OUR MISSION</h2>
+                            <p class="content-card-description">
+To train individuals to master the perfect fit — because fashion doesn’t turn heads until it fits right. We focus on construction that complements the human form in 3D, ensuring quality and client satisfaction every time.
+                            </p>
+                        </div>
+                        <div class="content-card animate-on-scroll anim-slide-from-left delay-1">
+                            <h2 class="content-card-title">OUR VISION</h2>
+                            <p class="content-card-description">
+To be Sri Lanka’s leading center for practical fashion education, producing professionals who blend creativity with precision and set new standards in garment making.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mission-vision-image-column">
+                        <div class="image-overlap-wrapper">
+                            <div class="image-card image-mv-1 animate-on-scroll anim-rotate-fade-in delay-2">
+                                <img src="Images/about-us/134186586_3615772055179594_3773887647254313553_n.jpg" alt="Our Mission relevant image">
+                            </div>
+                            <div class="image-card image-mv-2 animate-on-scroll anim-rotate-fade-in delay-3">
+                                <img src="Images/about-us/67136733_2336617953095017_6471378330422607872_n.jpg" alt="Our Vision relevant image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience-hero-section">
+            <div class="experience-content-wrapper">
+                <div class="experience-text-block">
+                    <h1 class="experience-title animate-on-scroll anim-slide-up">My Experience</h1>
+                    <p class="experience-description animate-on-scroll anim-slide-up-subtle delay-1">
+With over 35 years in the fashion clothing industry, I’ve had the privilege of training thousands of students — from beginners to professionals. My journey began with a passion for garment construction and evolved into a mission: to raise the standards of fit and finish in the Sri Lankan fashion scene. As CEO of Ferla Apparel Tech, I’ve worked closely with manufacturers, designers, and clients, always emphasizing the importance of quality and custom fit.
+                    </p>
+                    <p class="experience-description animate-on-scroll anim-slide-up-subtle delay-2">
+My teaching focuses not just on theory, but on practical skill — helping each student understand how to shape fabric around the human body in a way that’s both functional and beautiful. I take personal responsibility in every student’s development, ensuring they leave with the confidence and ability to face the fashion industry's challenges head-on.
+
+
+                    </p>
+                    <p class="experience-description animate-on-scroll anim-slide-up-subtle delay-3">
+
+                    </p>
+                    <div class="experience-social-links">
+                        <a href="https://web.facebook.com/ferlafashion" target="_blank" rel="noopener noreferrer" class="social-icon facebook-icon animate-on-scroll anim-pop-in delay-4" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://wa.me/94713999800" target="_blank" rel="noopener noreferrer" class="social-icon whatsapp-icon animate-on-scroll anim-pop-in delay-5" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                 <!-- Placeholder for the "Dude" Image if you intend to use it here -->
+                 <!-- Make sure your about.css has styling for .experience-dude-image if this is used -->
+                <div class="experience-dude-image-container animate-on-scroll anim-slide-from-right delay-2">
+                     <!-- Assuming .experience-dude-image styling would make this an img tag container for positioning -->
+                    <img src="Images/about-us/actor-my-experience.png" alt="My Image" class="experience-dude-actual-image"> <!-- Add class for actual image styling -->
+                </div>
+            </div>
+        </section>
+        <!-- The duplicate HTML structure starting with <!DOCTYPE html> has been REMOVED from here -->
+    </main>
+
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-column animate-on-scroll anim-fade-in delay-1">
+                <h4 class="footer-title">About Us</h4>
+                <p class="footer-about-text">
+Mr. Fernando will personally undertake the responsibility to develop your skills to face future challenges in creating Fashion construction according to the 3D physical shapes and Measurements of the human figure while maintaining high quality and Manufacturing according to the client's satisfaction
+                    <a href="about.html" class="read-more-link">read more</a>
+                </p>
+                <div class="social-icons">
+                    <a href="https://web.facebook.com/ferlafashion" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/94713999800" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column animate-on-scroll anim-fade-in delay-2">
+                <h4 class="footer-title">Affiliated Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home Page</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column animate-on-scroll anim-fade-in delay-3">
+                <h4 class="footer-title">Get in Touch</h4>
+                <ul class="footer-contact-info">
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+94 77 222 9799
+</span>
+                    </li>
+                                        <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+94 71 399 9800</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>139 haverlock rd, colombo 05</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>ferla.apperal@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr class="footer-divider animate-on-scroll anim-fade-in delay-4">
+        <div class="footer-bottom animate-on-scroll anim-fade-in delay-5">
+            <p>© <span id="current-year">2023</span> Ferla Appare Tech. All Rights Reserved. Designed by <a href="https://www.vinzeres.com/" target="_blank" rel="noopener noreferrer">Viuzeres</a></p>
+        </div>
+    </div>
+</footer>
+<script src="script/header.js"></script>
+<script src="script/homepage.js"></script> <!-- Re-using homepage.js for animations -->
+<script src="script/footer.js"></script>
+</body>
+</html>

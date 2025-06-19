@@ -1,0 +1,177 @@
+/* ... (your existing CSS) ... */
+
+/* Site Footer */
+.site-footer {
+    background-color: #333; /* Dark grey background */
+    color: #ccc;             /* Main text color (light grey) */
+    padding: 70px 30px 40px; /* INCREASED top padding, adjusted horizontal/bottom padding */
+    font-family: 'Roboto', Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll from animations if footer content is wide before animating */
+}
+
+.site-footer .container {
+    /* max-width and margin: 0 auto; are assumed to be global .container styles */
+    max-width: 1200px; /* Added max-width for consistency */
+    margin: 0 auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 45px; /* INCREASED gap between columns for more breathing room */
+    margin-bottom: 50px; /* INCREASED margin before the divider */
+}
+
+.footer-column {
+    /* Adding some padding within each column if its content feels too close to its edges
+       However, the gap in footer-grid often suffices. This is optional. */
+    /* padding: 0 10px; */
+    /* padding: 0 50px; */ /* Commented out, 45px gap should be enough */
+}
+
+.footer-title {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 1.45em; /* Slightly adjusted */
+    color: #fff;      /* White title */
+    margin-bottom: 28px; /* INCREASED space below title */
+    font-weight: 600;
+}
+
+.footer-about-text {
+    font-size: 0.92em; /* Slightly adjusted */
+    line-height: 1.75;
+    margin-bottom: 25px; /* INCREASED space below about text */
+    color: #bbb;
+}
+
+.footer-about-text .read-more-link {
+    color: #fff; /* CHANGED: Accent color to white */
+    text-decoration: none;
+    font-weight: 500; /* Keep bold for emphasis */
+    transition: opacity 0.3s ease; /* Change transition for a subtle effect */
+}
+.footer-about-text .read-more-link:hover {
+    opacity: 0.8; /* Slightly transparent on hover */
+    text-decoration: underline;
+}
+
+.social-icons a {
+    color: #ccc; /* Main icon color */
+    font-size: 1.6em; /* Slightly larger icons */
+    margin-right: 18px; /* Slightly more space between icons */
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+.social-icons a:last-child {
+    margin-right: 0;
+}
+.social-icons a:hover {
+    color: #fff; /* Brighter on hover - keeping this white as it's standard */
+    transform: translateY(-3px);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 14px; /* Slightly more space between links */
+}
+
+.footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+.footer-links a:hover {
+    color: #fff;
+    padding-left: 5px;
+}
+
+.footer-contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact-info li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 18px; /* More space between contact items */
+    font-size: 0.95em;
+    color: #bbb;
+}
+
+.footer-contact-info li i { /* Font Awesome icons in contact info */
+    color: #fff; /* CHANGED: Accent color to white for contact icons */
+    margin-right: 14px; /* More space next to icon */
+    font-size: 1.1em;
+    width: 22px; /* Ensure consistent spacing and alignment */
+    text-align: center;
+    padding-top: 2px; /* Fine-tune vertical alignment of icon with text */
+}
+.footer-contact-info li span {
+    flex: 1;
+}
+
+.footer-divider {
+    border: 0;
+    border-top: 1px solid #444;
+    margin: 50px 0; /* INCREASED margin around divider */
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.85em;
+    color: #999;
+}
+.footer-bottom p {
+    margin: 0;
+}
+.footer-bottom a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer-bottom a:hover {
+    color: #fff;
+}
+
+/* Responsive Adjustments for Footer (General structure should hold) */
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 60px 25px 30px; /* Adjust padding for tablets */
+    }
+    .footer-grid {
+        gap: 35px; /* Adjust gap */
+    }
+    .footer-title {
+        font-size: 1.35em; /* Adjust title size */
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .site-footer {
+        padding: 50px 20px 25px; /* Adjust padding for smaller mobile */
+    }
+    .footer-grid {
+        grid-template-columns: 1fr; /* Ensure single column */
+        gap: 30px;
+    }
+    .footer-column {
+        margin-bottom: 10px;
+    }
+    .footer-column:last-child {
+        margin-bottom: 0;
+    }
+    .footer-divider {
+        margin: 30px 0;
+    }
+    .footer-bottom {
+        font-size: 0.8em;
+    }
+}
